@@ -1,0 +1,32 @@
+AES
+#pip install pycryptodome
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+from Crypto.Random import get_random_bytes
+
+key = b'16bytekey1234567'
+iv = get_random_bytes(AES.block_size)
+cipher = AES.new(key, AES.MODE_CBC, iv)
+
+message = "Hello, AES encrypted!".encode()
+cipher_text = cipher.encrypt(pad(message, AES.block_size))
+print("Encrypted:", cipher_text)
+
+decrypt_cipher = AES.new(key, AES.MODE_CBC, iv)
+decrypted_text = unpad(decrypt_cipher.decrypt(cipher_text), AES.block_size)
+print("Decrypted:", decrypted_text.decode())
+
+
+DES
+from Crypto.Cipher import DES
+from Crypto import Random
+iv = Random.get_random_bytes(8)
+key = b'01234567'
+iv = iv
+des1 = DES.new(key, DES.MODE_CFB, iv)
+des2 = DES.new(key, DES.MODE_CFB, iv)
+text = 'KEYBOARD'
+cipher_text = des1.encrypt(text.encode('utf-8'))
+print("Encrypted Message:", cipher_text)
+decrypted_text = des2.decrypt(cipher_text).decode('utf-8')
+print("Decrypted message:", decrypted_text)
