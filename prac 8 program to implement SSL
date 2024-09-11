@@ -1,0 +1,60 @@
+8A
+import hashlib
+#Initializing the input string
+inputl "What a great day"
+#Encoding the string using encode) and then sending it to SHA256
+result1 = hashlib.sha256(input1.encode())
+#Printing the equivalent hexadecimal value
+print("The hexadecimal equivalent of SHA256 for the first string is:", end")
+print(result1.hexdigest())
+#Initializing the second input string
+input2="what a great day"
+#Encoding the string using encode) and then sending it to SHA256
+result2 = hashlib.sha256(input2.encode())
+#Printing the equivalent hexadecimal value
+print("The hexadecimal equivalent of SHA256 for the second string is: ", end="")
+print(result2.hexdigest())
+
+
+8B
+import hashlib
+# Initializing the input string
+input_string = "Name 1234$"
+# Encoding the string using encode) and then sending it to SHA-512
+result = hashlib.sha512(input_string.encode())
+# Printing the equivalent hexadecimal value
+print("The hexadecimal equivalent of SHA512 is:", end="")
+print(result.hexdigest())
+
+8C
+import hashlib
+# Initializing the input string
+input_string ="$abcdef"
+# Encoding the string using encode) and then sending it to SHA-384
+result = hashlib.sha384(input_string.encode())
+# Printing the equivalent hexadecimal value
+print("The hexadecimal equivalent of SHA384 is: ", end="")
+print(result.hexdigest())
+
+
+8D
+import hashlib
+#Initializing the input string
+input_string = "$abcdef"
+# Encoding the string using encode) and then sending it to SHA-224
+result = hashlib.sha224(input_string.encode())
+# Printing the equivalent hexadecinal value
+print("The hexadecimal equivalent of SHA224 is:", end="")
+print(result.hexdigest())
+
+
+8E
+import hashlib
+# Initializing the input string
+input_string = "this is great"
+# Encoding the string using encode0 and then sending it to SHA-1
+result = hashlib.sha1(input_string.encode())
+# Printing the equivalent hexadecimal value
+print("The hexadecimal equivalent of SHA1 is:", end="")
+print(result.hexdigest())
+
