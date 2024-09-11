@@ -1,0 +1,51 @@
+columanar
+#Columanar transposition
+key =input('Enter the key ')
+userval=input('Enter  a value ')
+col=len(key)
+if((len(userval)%col)!=0):userval+="x"*(len(userval)%col)
+userval=userval.replace(' ','') #remove white spaces from key
+o=[]
+for i in key:
+    o.append(i) #generating list for keys
+    h=[]
+    for i in range(col):
+        h.append(userval[i:len(userval):col]) #generating list for plaintext column wise
+        dic=dict(zip(o,h)) #adding both lists
+        so=sorted(dic.keys()) #sorting alphabetically keys of cipher
+        print(''.join(dic[i]for i in so))
+
+
+
+railfence transpotation
+def main():
+    # get the number of layers to rail encrypt
+    layers = int(input("enter the number of layers: "))
+    # get the plain text
+    plaintext = input("enter the plain text: ")
+
+    # encrypt the plain text
+    ciphertext = encrypt(layers,plaintext)
+    print("Encrypted test : "+ciphertext)
+
+def encrypt(layers,plaintext):
+    #remove all white spaces in text
+    plaintext=plaintext.replace(" ","")
+
+    # change plaintext to upper case
+    plaintext = plaintext.upper()
+
+    #divide plaintext into layers number of string
+    rail = [""] * layers
+    layer = 0
+    for  character in plaintext:
+        rail[layer] += character
+        if layer >= layers - 1:
+            layer = 0
+        else:
+            layer += 1
+    cipher = "".join(rail)
+    return cipher
+
+if __name__== '__main__':
+    main()
