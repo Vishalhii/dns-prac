@@ -1,0 +1,48 @@
+ceaser cipher
+def encrypt():
+    word = input("enter the plain text : ")
+    k = int(input("enter the key offset: "))
+    c = ''
+    for i in word:
+        if (i == ''):
+            c += ''
+        else:
+            c += (chr(ord(i) + k))
+    return c
+print(encrypt())
+def decrypt():
+    word = input("enter the plain text : ")
+    k = int(input("enter the key offset: "))
+    c = ''
+    for i in word:
+        if (i == ''):
+            c += ''
+        else:
+            c += (chr(ord(i) - k))
+    return c
+print(decrypt())
+
+
+mono alphabetic cipher
+alphabets={
+    'a':'m', 'b':'n',
+    'c':'o', 'd':'p',
+    'e':'q', 'f':'r',
+    'g':'s', 'h':'t',
+    'i':'u', 'j':'v',
+    'k':'w', 'l':'x',
+    'm':'y', 'n':'z',
+    'o':'a', 'p':'b',
+    'q':'c', 'r':'d',
+    's':'e', 't':'f',
+    'u':'g', 'v':'h',
+    'w':'i', 'x':'j',
+    'y':'k', 'z':'l',
+    ' ':' ',
+    }
+message=input("enter the message:")
+result=' '
+for letter in message.lower():
+    if letter in alphabets:
+        result+=alphabets[letter]
+    print("cipher text :"+result)
