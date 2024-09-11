@@ -1,0 +1,16 @@
+7A
+from hashlib import sha1
+import hmac
+text = b'This is a Plain text.'
+print('Text:', text)
+key = b'Vishal'
+print('Key:', key)
+hashed = hmac.new(key, text, sha1)
+print('Hashed Value:', hashed.digest())
+
+
+7B
+import hashlib
+result = hashlib.md5(b'text')
+print("the byte equivalent of hash is:", end = "")
+print(result.digest())
