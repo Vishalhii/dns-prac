@@ -1,0 +1,26 @@
+p= 13 #Prime nunber
+g= 6 #Primitive root modulo p
+
+# Private keys for Alice and Bob
+a = 5 #Alice's private key
+b = 4 #Bob 's private key
+
+# Public keys for Alice and Bob
+A = pow (g,  a,  p)  # Alice's public key
+B= pow (g,  b,  p)  # Bob's public key
+
+# Shared secret keys computation
+shared_secret_alice = pow (B, a, p) #Alices computation
+shared_secret_bob = pow (A, b, p) #Bob's computation
+
+# Output the results
+print (f"Alice's private key: (a)")
+print (f"Bob's private key: (b}")
+print (f"Alice's public key: (A)")
+print (f"Bob's publíc key: (B}")
+print (f" Shared secret (Alice's computation) : {shared_secret_alice}")
+print (f" Shared secret (Bob's computation) : {shared_secret_bob}")
+
+# Check if the shared secrets match
+assert shared_secret_alice shared secret bob, "Shared secrets do not ma tch!"
+print (f" The shared secret is: {shared_secret_alice}")
